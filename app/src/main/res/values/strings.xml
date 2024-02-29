@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_app">Message</string>
+    <string name="navigation_drawer_open">Mở Drawer</string>
+    <string name="navigation_drawer_close">Đóng Drawer</string>
+    <string name="ai_text">Tôi có thể giúp gì cho bạn.</string>
 </resources>
