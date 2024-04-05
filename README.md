@@ -1,5 +1,5 @@
-## Description
-Chat Application Android
+## Chat Application Android
+
 
 Họ và tên: Hoàng Tùng Dương
 MSV: dtc19h480201dt0002
