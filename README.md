@@ -1,3 +1,6 @@
+## Description
+Chat Application Android
+
 Họ và tên: Hoàng Tùng Dương
 MSV: dtc19h480201dt0002
 Email: dtc19h480201dt0002@ictu.edu.vn
