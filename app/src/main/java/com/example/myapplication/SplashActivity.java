@@ -23,7 +23,8 @@ public class SplashActivity extends AppCompatActivity {
 
         if (FirebaseUtil.isLoggedIn() && getIntent().getExtras()!=null){
             //notification
-            String userId = getIntent().getExtras().getString("userId");
+//            String userId = getIntent().getExtras().getString("userId");
+            String userId = FirebaseUtil.currentUserID();
                 FirebaseUtil.allUserCollectionReference().document(userId).get()
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()){
@@ -31,9 +32,8 @@ public class SplashActivity extends AppCompatActivity {
                                 Intent mainIntent = new Intent(this, MainActivity.class);
                                 mainIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                 startActivity(mainIntent);
-
-
-                                Intent intent = new Intent(this, ChatActivity.class);
+                                                                              //ChatActivity
+                                Intent intent = new Intent(this, MainActivity.class);
                                 AndroidUtil.passUserModelAsIntent(intent, model);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);

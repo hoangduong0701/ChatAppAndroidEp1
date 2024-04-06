@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:elevation="2dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/edit_text_rounded_corner_itemchat"
+    >
+
+
+    <include layout="@layout/profile_pic_view"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="User name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/user_name_textRq"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_name_textRq"
+                android:text="+000000000000"
+                android:paddingTop="3dp"
+                android:id="@+id/phone_textRq"/>
+            <ImageButton
+                android:id="@+id/addRequestBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_done_24"
+                android:layout_toStartOf="@+id/videoCallPb"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#660099" />
+
+                />
+            <ImageButton
+                android:id="@+id/videoCallPb"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_close_24"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                app:tint="#660099"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

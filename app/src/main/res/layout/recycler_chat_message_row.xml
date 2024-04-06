@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_rounded_corner"
-        android:backgroundTint="@color/chat_color_sender"
+        android:backgroundTint="@color/chat_color_gray"
         android:padding="8dp"
         android:layout_marginEnd="80dp"
         android:id="@+id/left_chat_layout"
@@ -19,15 +19,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_rounded_corner"
-        android:backgroundTint="@color/chat_color_receiver"
+        android:backgroundTint="@color/chat_color_blue"
         android:layout_alignParentEnd="true"
+
         android:padding="8dp"
         android:layout_marginStart="80dp"
         android:id="@+id/right_chat_layout">

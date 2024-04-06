@@ -1,16 +1,12 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.myapplication.FriendFragment.FriendFragment;
 import com.example.myapplication.model.UserModel;
 import com.example.myapplication.utils.AndroidUtil;
 import com.example.myapplication.utils.FirebaseUtil;
@@ -40,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ChatFragment chatFragment;
     ProfileFragment profileFragment;
-    phonebook phonebook;
+    FriendFragment phonebook;
     NavigationView navigationView;
 
+    UserModel currentUserModel;
     TextView textView;
     ImageView imageView;
     UserModel userModel;
@@ -54,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         chatFragment = new ChatFragment();
         profileFragment = new ProfileFragment();
-        phonebook = new phonebook();
+        phonebook = new FriendFragment();
         searchButton = findViewById(R.id.main_search_btn);
         menuBtn = findViewById(R.id.main_menu_btn);
         drawerLayout =findViewById(R.id.drawrlayout);
         navigationView = findViewById(R.id.navigationview);
+
 
 
 
@@ -88,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 }
-//                if (item.getItemId() == R.id.navAbout){
-//                    Intent intent = new Intent(MainActivity.this, testswpie.MainActivity.class);
+                if (item.getItemId() == R.id.navAbout){
+//                    Intent intent = new Intent(MainActivity.this, com.example.myapplication.test.MainActivity.class);
 //                    startActivity(intent);
-//
-//                }
+
+                }
                 return true;
 
             }
@@ -106,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
         getFCMToken();
 
     }
+
+
+
     void getDataHeaderNav(){
         navigationView = findViewById(R.id.navigationview);
         View headerView = navigationView.getHeaderView(0);
@@ -173,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
             String token = task.getResult();
             Log.i("My token", token);
-
             FirebaseUtil.currentUserDetails().update("fcmToken", token);
         });
     }

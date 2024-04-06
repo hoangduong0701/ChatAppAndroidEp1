@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/tab_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_rounded_corner"
+                >
+
+                <!-- Ảnh bìa -->
+                <ImageView
+                    android:id="@+id/coverPhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/anhbia1"
+                    android:layout_alignParentTop="true" />
+
+                <!-- Ảnh đại diện -->
+                <ImageView
+                    android:id="@+id/profilePhotoImageView"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/person_icon"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/circular_bg"
+                    android:backgroundTint="@color/my_primary"
+                    android:scaleType="centerCrop"
+                    android:layout_centerHorizontal="true" />
+
+                <!-- Tên -->
+                <TextView
+                    android:id="@+id/usernameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Doe"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    android:textColor="@color/chat_color_blue"
+                    android:layout_below="@id/profilePhotoImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp" />
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giới thiệu bản thân"
+                    android:hint="Cập nhật trạng thái"
+                    android:textColorHint="@color/chat_color_blue"
+                    android:textSize="12sp"
+                    android:textColor="@color/chat_color_blue"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    />
+
+                <!-- Button 1 -->
+                <Button
+                    android:id="@+id/messageProfileBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nhắn tin"
+                    android:background="@drawable/edit_text_rounded_corner"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_alignParentStart="true"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="30dp"/>
+
+                <!-- Button 2 -->
+                <Button
+                    android:id="@+id/addFriendProfileBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kết bạn"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:background="@drawable/edit_text_rounded_corner"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="50dp"
+                    android:visibility="visible"
+                    android:layout_marginBottom="30dp"/>
+                <Button
+                    android:id="@+id/deleteFriendProfileBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hủy kết bạn"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:background="@drawable/edit_text_rounded_corner"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="30dp"/>
+                <Button
+                    android:id="@+id/delete_rqBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hủy lời mời"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:background="@drawable/edit_text_rounded_corner"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="30dp"/>
+                <Button
+                    android:id="@+id/acceptRequestBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Đồng ý kết bạn"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:background="@drawable/edit_text_rounded_corner"
+                    android:layout_below="@id/usernameTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="30dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/tab_1"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_rounded_corner"
+
+                >
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:src="@drawable/icon_back"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBackgroundStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:padding="5dp"
+        android:background="#32000000"
+        android:layout_alignParentTop="true"
+        />
+
+</RelativeLayout>

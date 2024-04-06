@@ -37,23 +37,5 @@ public class AndroidUtil {
     public static void setProfilePic(Context context, Uri imageUri, ImageView imageView) {
         Glide.with(context).load(imageUri).apply(RequestOptions.circleCropTransform()).into(imageView);
     }
-    public static void setProfilePictrue(Context context, String imageUrl, ImageView imageView) {
-        if (imageUrl != null && imageView != null) {
-            // Hãy kiểm tra xem context có khác null không (chưa chắc là nguyên nhân, nhưng là một biện pháp phòng tránh)
-            if (context != null) {
-                Glide.with(context)
-                        .load(imageUrl)
-                        .into(imageView);
-            } else {
-                // Xử lý trường hợp context là null, có thể hiển thị một log hoặc thực hiện hành động khác tùy thuộc vào yêu cầu của bạn.
-                Log.e("AndroidUtil", "Context is null");
-            }
-        } else {
-            // Xử lý trường hợp imageUrl hoặc imageView là null
-            Log.e("AndroidUtil", "ImageUrl or ImageView is null");
-        }
-    }
-
-    // ...
 
 }

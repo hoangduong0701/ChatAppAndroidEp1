@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Messager</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_app">Message</string>
     <string name="navigation_drawer_open">Mở Drawer</string>
     <string name="navigation_drawer_close">Đóng Drawer</string>
     <string name="ai_text">Tôi có thể giúp gì cho bạn.</string>
+    <string name="them_ban">Thêm bạn</string>
+    <string name="ban_be">Bạn bè</string>
+    <string name="loi_moi">Lời mời</string>
+    <string name="da_la_Ban">Đã gửi lời mời kết bạn</string>
+    <string name="waitFriend">Đang chờ được chấp nhận</string>
+
+
 </resources>

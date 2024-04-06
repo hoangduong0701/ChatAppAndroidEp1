@@ -18,6 +18,10 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/my_primary"
+            android:src="@drawable/person_icon"
+            android:scaleType="centerCrop"
             android:id="@+id/imageViewUser"
             />
         <ProgressBar

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -13,7 +14,10 @@ import com.example.myapplication.adapter.SearchUserRecyclerAdapter;
 import com.example.myapplication.model.UserModel;
 import com.example.myapplication.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
+
+import java.util.ArrayList;
 
 public class SearchUserActivity extends AppCompatActivity {
 
@@ -21,6 +25,7 @@ public class SearchUserActivity extends AppCompatActivity {
     ImageButton searchButton;
     ImageButton backButton;
     RecyclerView recyclerView;
+
 
     SearchUserRecyclerAdapter adapter;
     @Override
@@ -47,6 +52,7 @@ public class SearchUserActivity extends AppCompatActivity {
             setupSearchRecyclerView(searchTerm);
         });
     }
+
     void setupSearchRecyclerView(String searchTerm){
         Query query = FirebaseUtil.allUserCollectionReference()
                 .whereGreaterThanOrEqualTo("username",searchTerm)
@@ -62,6 +68,7 @@ public class SearchUserActivity extends AppCompatActivity {
 
 
     }
+
 
     @Override
     protected void onStart() {
@@ -81,6 +88,6 @@ public class SearchUserActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(adapter!=null)
-            adapter.startListening();
+            adapter.notifyDataSetChanged();
     }
 }

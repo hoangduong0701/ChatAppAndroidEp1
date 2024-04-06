@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 
@@ -46,6 +46,7 @@ public class BotActivity extends AppCompatActivity {
             .build();
 
 
+    float x1, x2, y1, y2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +114,7 @@ public class BotActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(), JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
@@ -152,5 +153,25 @@ public class BotActivity extends AppCompatActivity {
 
 
     }
+
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch (touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if (x1 < x2){
+                    onBackPressed();
+                }
+
+
+        }
+
+        return false;
+    }
+
 
 }
